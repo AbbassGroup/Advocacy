@@ -52,23 +52,38 @@ exports.getAllContacts = async (req, res, next) => {
     if (status) query.status = status;
     if (division) query.division = division;
 
-    const options = {
-      page: parseInt(page),
-      limit: parseInt(limit),
-      sort: { createdAt: -1 },
-      select: '-__v'
-    };
+    const currentPage = parseInt(page);
+    const perPage = parseInt(limit);
+    const skip = (currentPage - 1) * perPage;
 
-    const contacts = await Contact.paginate(query, options);
+    const [contacts, total] = await Promise.all([
+      Contact.find(query)
+        .sort({ createdAt: -1 })
+        .skip(skip)
+        .limit(perPage)
+        .select('-__v'),
+      Contact.countDocuments(query)
+    ]);
+
+    const totalPages = Math.ceil(total / perPage);
 
     res.status(200).json({
       status: 'success',
-      data: contacts
+      data: contacts,
+      pagination: {
+        total,
+        limit: perPage,
+        page: currentPage,
+        totalPages,
+        hasNextPage: currentPage < totalPages,
+        hasPrevPage: currentPage > 1
+      }
     });
   } catch (error) {
     next(error);
   }
 };
+
 
 exports.getContactById = async (req, res, next) => {
   try {

@@ -68,69 +68,63 @@ const ebookSchema = new mongoose.Schema({
   toObject: { virtuals: true }
 });
 
-// Index for better query performance
+// Indexes
 ebookSchema.index({ email: 1, createdAt: -1 });
 ebookSchema.index({ status: 1, createdAt: -1 });
 ebookSchema.index({ ebookType: 1, createdAt: -1 });
 ebookSchema.index({ marketingConsent: 1, createdAt: -1 });
 
-// Virtual for formatted date
-ebookSchema.virtual('formattedDate').get(function() {
-  return this.createdAt.toLocaleDateString('en-AU', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
-  });
+// ✅ Fixed: Safe virtual for formatted createdAt
+ebookSchema.virtual('formattedDate').get(function () {
+  return this.createdAt
+    ? this.createdAt.toLocaleDateString('en-AU', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      })
+    : null;
 });
 
-// Virtual for last download formatted date
-ebookSchema.virtual('formattedLastDownload').get(function() {
-  return this.lastDownloaded.toLocaleDateString('en-AU', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
-  });
+// ✅ Fixed: Safe virtual for formatted lastDownloaded
+ebookSchema.virtual('formattedLastDownload').get(function () {
+  return this.lastDownloaded
+    ? this.lastDownloaded.toLocaleDateString('en-AU', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      })
+    : null;
 });
 
-// Pre-save middleware to clean data
-ebookSchema.pre('save', function(next) {
-  if (this.name) {
-    this.name = this.name.trim();
-  }
-  if (this.email) {
-    this.email = this.email.toLowerCase().trim();
-  }
-  if (this.phone) {
-    this.phone = this.phone.trim();
-  }
-  if (this.ebookTitle) {
-    this.ebookTitle = this.ebookTitle.trim();
-  }
+// Pre-save cleanup
+ebookSchema.pre('save', function (next) {
+  if (this.name) this.name = this.name.trim();
+  if (this.email) this.email = this.email.toLowerCase().trim();
+  if (this.phone) this.phone = this.phone.trim();
+  if (this.ebookTitle) this.ebookTitle = this.ebookTitle.trim();
   next();
 });
 
-// Static method to find or create ebook download
-ebookSchema.statics.findOrCreateDownload = async function(downloadData) {
+// Static method to find or create download record
+ebookSchema.statics.findOrCreateDownload = async function (downloadData) {
   const { email, ebookTitle } = downloadData;
-  
+
   let ebook = await this.findOne({ email, ebookTitle });
-  
+
   if (ebook) {
-    // Update existing record
     ebook.downloadCount += 1;
     ebook.lastDownloaded = new Date();
     await ebook.save();
   } else {
-    // Create new record
     ebook = new this(downloadData);
     await ebook.save();
   }
-  
+
   return ebook;
 };
 
-module.exports = mongoose.model('Ebook', ebookSchema); 
+module.exports = mongoose.model('Ebook', ebookSchema);

@@ -66,8 +66,8 @@ app.get('/api/health', (req, res) => {
 });
 
 // API routes
-app.use('/api/contact', contactRoutes);
-app.use('/api/ebook', ebookRoutes);
+app.use('/api/v1/contact', contactRoutes);
+app.use('/api/v1/ebook', ebookRoutes);
 
 // 404 handler
 // app.use('*', (req, res) => {

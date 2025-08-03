@@ -18,7 +18,7 @@ router.post('/unsubscribe', unsubscribeEbook);
 
 // Admin/Private routes
 router.get('/', getAllEbooks);
-router.get('/stats', getEbookStats);
+router.get('/status', getEbookStats);
 router.get('/get/:id', getEbookById);
 router.patch('/update/:id', updateEbook);
 

@@ -5,7 +5,7 @@ const fs = require('fs');
 
 exports.createEbook = async (req, res, next) => {
   try {
-    const { name, email, phone, ebookTitle, ebookType = 'general' } = req.body;
+    const { name, email, phone, ebookTitle, ebookType = 'advocacy' } = req.body;
 
     const ebookDownload = await Ebook.findOrCreateDownload({
       name,
@@ -33,7 +33,7 @@ exports.createEbook = async (req, res, next) => {
         ebookTitle: ebookDownload.ebookTitle,
         downloadCount: ebookDownload.downloadCount,
         submittedAt: ebookDownload.createdAt,
-        downloadUrl: `/api/ebook/download/${encodeURIComponent(ebookTitle)}`
+        downloadUrl: `/api/v1/ebook/download/${encodeURIComponent(ebookTitle)}`
       }
     });
   } catch (error) {
@@ -47,14 +47,10 @@ exports.downloadEbook = async (req, res, next) => {
     const decodedTitle = decodeURIComponent(title);
 
     const ebookFileMap = {
-      'Escape The Employee Mindset': 'Escape The Employee Mindset.pdf',
-      'Start Smart: What to do in the first 90 days': 'Start Smart What to Do in Your First 90 Days of Business.pdf',
-      'Systems over stress': 'Systems Over Stress.pdf',
-      'The breakout blueprint': 'The Breakout Blueprint.pdf',
-      'The confidence code': 'The Confidence Code.pdf',
-      'The sales blueprint': 'The Sales Blueprint.pdf',
-      'The silent entrepreneur': 'The Silent Entrepreneur.pdf',
-      'Your licence to thrive': 'Your Licence to Thrive How to Launch and Grow Your Own Business Under a Trusted Brand.pdf'
+      'Benefits for purchasing an investment property first': 'Benefits for purchasing an investment property first.pdf',
+      'Reasons for financing your portfolio': 'Reasons for financing your portfolio.pdf',
+      'Unlocking Your Property Investment Potential': 'Unlocking Your Property Investment Potential.pdf',
+      'Why investing is essential': 'Why investing is essential.pdf',
     };
 
     const filename = ebookFileMap[decodedTitle];
@@ -86,20 +82,38 @@ exports.getAllEbooks = async (req, res, next) => {
     if (ebookType) query.ebookType = ebookType;
     if (email) query.email = email.toLowerCase();
 
-    const options = {
-      page: parseInt(page),
-      limit: parseInt(limit),
-      sort: { createdAt: -1 },
-      select: '-__v'
-    };
+    const currentPage = parseInt(page);
+    const perPage = parseInt(limit);
+    const skip = (currentPage - 1) * perPage;
 
-    const downloads = await Ebook.paginate(query, options);
+    const [downloads, totalDocuments] = await Promise.all([
+      Ebook.find(query)
+        .sort({ createdAt: -1 })
+        .skip(skip)
+        .limit(perPage)
+        .select('-__v'),
+      Ebook.countDocuments(query)
+    ]);
 
-    res.status(200).json({ status: 'success', data: downloads });
+    const totalPages = Math.ceil(totalDocuments / perPage);
+
+    res.status(200).json({
+      status: 'success',
+      data: downloads,
+      pagination: {
+        totalDocuments,
+        totalPages,
+        currentPage,
+        limit: perPage,
+        hasNextPage: currentPage < totalPages,
+        hasPrevPage: currentPage > 1
+      }
+    });
   } catch (error) {
     next(error);
   }
 };
+
 
 exports.getEbookStats = async (req, res, next) => {
   try {
@@ -150,6 +164,7 @@ exports.getEbookStats = async (req, res, next) => {
     next(error);
   }
 };
+
 
 exports.getEbookById = async (req, res, next) => {
   try {
