@@ -26,7 +26,7 @@ export default function PracticeAreas() {
                             >
                                 <div className="relative overflow-hidden">
                                     <img
-                                        src={area.image || "/placeholder.svg"}
+                                        src={`/advocacy/${area.image || "placeholder.svg"}`}
                                         alt={area.title}
                                         className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300 rounded-2xl"
                                     />

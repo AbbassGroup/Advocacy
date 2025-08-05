@@ -35,7 +35,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <div className="flex items-center space-x-3">
                         <div className="hidden sm:block">
-                            <img src="/logo.png" alt="abbas advocacy logo" className="h-16" />
+                            <img src="/advocacy/logo.png" alt="abbas advocacy logo" className="h-16" />
                         </div>
                     </div>
 

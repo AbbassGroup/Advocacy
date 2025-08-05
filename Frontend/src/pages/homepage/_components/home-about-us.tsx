@@ -17,7 +17,7 @@ const HomeAboutUs = () => {
             <div className="relative">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                     <img
-                        src="/placeholder.svg?height=600&width=500"
+                        src="/advocacy/placeholder.svg?height=600&width=500"
                         alt="Legal consultation"
                         className="w-full h-[600px] object-cover"
                     />

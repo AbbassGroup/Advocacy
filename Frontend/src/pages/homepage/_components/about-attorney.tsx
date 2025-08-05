@@ -26,7 +26,7 @@ export default function AboutAttorneySection() {
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <div className="relative">
                         <div className="relative w-full h-[600px] ring-2 ring-primary ring-offset-8 rounded-2xl">
-                            <img src={`/meet-team.png`} className="w-full h-full rounded-2xl object-cover"/>
+                            <img src={`/advocacy/meet-team.png`} className="w-full h-full rounded-2xl object-cover"/>
                         </div>
                     </div>
                     <div>

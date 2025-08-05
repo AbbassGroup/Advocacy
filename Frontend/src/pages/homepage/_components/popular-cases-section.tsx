@@ -68,7 +68,7 @@ export default function PopularCases() {
                         >
                             <div className="relative overflow-hidden">
                                 <img
-                                    src={caseItem.image || "/placeholder.svg"}
+                                    src={`/advocacy/${caseItem.image || "placeholder.svg"}`}
                                     alt={caseItem.title}
                                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
