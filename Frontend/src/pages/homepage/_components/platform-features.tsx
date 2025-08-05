@@ -1,46 +1,58 @@
-import SectionHeaderDescription from "@/components/section-header-description"
-import SectionHeaderTitle from "@/components/section-header-title"
-import { ArrowRight, Building, Hammer, Scale } from "lucide-react"
+import SectionHeaderDescription from "@/components/section-header-description";
+import { ArrowRight, Building, Hammer, Scale } from "lucide-react";
 
 export default function FeaturesSection() {
     const features = [
         {
             icon: Scale,
-            title: "Best Client Support",
+            title: "Property Search",
             description:
-                "24/7 dedicated support with personalized attention to every case, ensuring you're never alone in your legal journey.",
+                "We identify properties that meet your goals, preferences, and budget—saving you countless hours and avoiding common buyer pitfalls.",
             color: "primary",
-            stats: "24/7",
-            highlight: "Always Available",
+            stats: "1,000+",
+            highlight: "Properties Sourced",
         },
         {
             icon: Hammer,
-            title: "Expert Legal Team",
+            title: "Evaluation & Negotiation",
             description:
-                "Seasoned attorneys with decades of combined experience across multiple practice areas and proven track records.",
+                "We assess true property value and handle negotiations or auction bidding to help you secure the best price and terms.",
             color: "secondary",
-            stats: "25+",
-            highlight: "Years Experience",
+            stats: "300+",
+            highlight: "Deals Negotiated",
         },
         {
             icon: Building,
-            title: "Comprehensive Solutions",
-            description: "Full-service legal representation from initial consultation through case resolution and beyond records.",
+            title: "End-to-End Support",
+            description: "From inspections to contract reviews, we manage the entire process—ensuring a smooth, stress-free property buying experience.",
             color: "primary",
-            stats: "500+",
-            highlight: "Cases Solved",
+            stats: "98%",
+            highlight: "Client Satisfaction",
         },
-    ]
+    ];
+
 
     return (
-        <section className="relative py-24">
+        <section className="relative py-16">
             <div className="container mx-auto">
-                {/* Section Header */}
-                <div className="text-left mb-20">
-                    <SectionHeaderTitle title="Excellence in Legal Services" />
-                    <SectionHeaderDescription title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
+                <div className="text-left mb-16">
+                    <h2 className="text-3xl sm:text-6xl font-bold text-gray-900 mb-6">
+                        Our Advocacy{" "}
+                        <span className="text-primary relative">
+                            Services
+                            <svg
+                                className="absolute -bottom-2 left-0 w-full h-3 text-primary/20"
+                                viewBox="0 0 100 12"
+                                fill="currentColor"
+                            >
+                                <path d="M0 8c30-4 70-4 100 0v4H0z" />
+                            </svg>
+                        </span>
+                    </h2>
+                    <div className="max-w-3xl">
+                        <SectionHeaderDescription title="Expert help at every step"/>
+                    </div>
                 </div>
-
                 {/* Diagonal Flow Layout */}
                 <div className="grid lg:grid-cols-12 gap-8 items-start">
                     {features.map((feature, index) => {
