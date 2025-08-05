@@ -82,7 +82,7 @@ export default function AboutSection() {
                         <div className="relative">
                             <div className="relative overflow-hidden rounded-3xl  ring-2 ring-primary ring-offset-8">
                                 <img
-                                    src="/lawyer-consulting.jpg"
+                                    src="/advocacy/lawyer-consulting.jpg"
                                     alt="Professional lawyers consulting with clients"
                                     className="w-full h-[600px] object-cover"
                                 />

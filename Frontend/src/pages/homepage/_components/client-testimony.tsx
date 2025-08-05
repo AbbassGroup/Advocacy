@@ -88,7 +88,7 @@ export default function ClientTestimonials() {
 
                                             <div className="flex items-center justify-center space-x-4">
                                                 <img
-                                                    src={testimonial.image || "/placeholder.svg"}
+                                                    src={`/advocacy/${testimonial.image || "placeholder.svg"}`}
                                                     alt={testimonial.name}
                                                     className="w-16 h-16 rounded-full object-cover border-4 border-[#D8B588]"
                                                 />

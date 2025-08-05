@@ -55,7 +55,7 @@ const HeroSection = () => {
                         </div>
 
                         <div>
-                            <img className="w-full" src="/hero-lawyer.png" alt="hero lawyer" />
+                            <img className="w-full" src="/advocacy/hero-lawyer.png" alt="hero lawyer" />
                         </div>
                     </div>
                 </div>
