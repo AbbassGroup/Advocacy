@@ -15,8 +15,8 @@ const Homepage = () => {
             <AboutAttorneySection />
             <PracticeAreas />
             {/* <PopularCases /> */}
-            <OurPartners />
             <FAQSection />
+            <OurPartners />
             {/* <ClientTestimonials /> */}
         </div>
     )
