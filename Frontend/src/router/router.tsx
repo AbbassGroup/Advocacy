@@ -1,5 +1,5 @@
 import MainLayout from "@/components/layouts/MainLayout";
-import HeroSection from "@/pages/homepage/_components/hero-section";
+import Homepage from "@/pages/homepage/page";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <HeroSection />
+                element: <Homepage />
             }
         ]
     }

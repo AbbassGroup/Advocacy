@@ -1,6 +1,7 @@
 const HeroSection = () => {
     return (
-        <div>
+        <div className="relative">
+            <div className="bg-gradient-to-t from-white via-white to-transparent w-full absolute -bottom-32 h-96 z-10"></div>
             <section className="pt-12 pb-12 sm:pb-16 lg:pt-8">
                 <div className="px-4 mx-auto container sm:px-6 md:px-0">
                     <div className="grid max-w-lg grid-cols-1 mx-auto lg:max-w-full lg:items-center lg:grid-cols-2 gap-y-12 lg:gap-x-16">
@@ -14,7 +15,7 @@ const HeroSection = () => {
                                 </p>
 
                                 <form action="#" method="POST" className="mt-8 sm:mt-10">
-                                    <div className="relative p-2 sm:border sm:border-gray-400 group sm:rounded-xl sm:focus-within:ring-1 sm:focus-within:ring-gray-900 sm:focus-within:border-gray-900">
+                                    <div className="relative -z-10 p-2 sm:border sm:border-gray-400 group sm:rounded-xl sm:focus-within:ring-1 sm:focus-within:ring-gray-900 sm:focus-within:border-gray-900">
                                         <input
                                             type="email"
                                             name="email"
