@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Calendar, User, Award } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { ArrowRight, Award, Calendar, User } from "lucide-react"
 
 export default function PopularCases() {
     const cases = [

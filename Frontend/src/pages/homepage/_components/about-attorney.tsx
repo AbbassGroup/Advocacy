@@ -21,7 +21,7 @@ export default function AboutAttorneySection() {
     ]
 
     return (
-        <section>
+        <section className="py-16 lg:py-24 ">
             <div className="container mx-auto">
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <div className="relative">
