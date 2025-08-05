@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Scale, Users, FileText, Shield, Gavel, Car } from "lucide-react"
+import { Car, FileText, Gavel, Scale, Shield, Users } from "lucide-react"
 
 export default function AboutSection() {
     const services = [
