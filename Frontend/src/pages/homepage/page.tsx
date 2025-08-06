@@ -1,3 +1,4 @@
+import BooksSection from "@/components/business-books-section"
 import AboutAttorneySection from "./_components/about-attorney"
 import AboutSection from "./_components/about-section"
 import FAQSection from "./_components/faq-section"
@@ -16,6 +17,7 @@ const Homepage = () => {
             <PracticeAreas />
             {/* <PopularCases /> */}
             <FAQSection />
+            <BooksSection />
             <OurPartners />
             {/* <ClientTestimonials /> */}
         </div>

@@ -3,12 +3,12 @@ import { Car, FileText, Gavel, Scale, Shield, Users } from "lucide-react"
 
 export default function AboutSection() {
     const services = [
-        { icon: Scale, name: "Immigration Laws" },
-        { icon: Car, name: "Traffic Violence" },
-        { icon: FileText, name: "Litigation & Arbitration" },
-        { icon: Users, name: "Domestic Violence Family" },
-        { icon: Shield, name: "Dui Defense" },
-        { icon: Gavel, name: "Crimes" },
+        { icon: Scale, name: "Buyer-Only Focus" },
+        { icon: Car, name: "Local Expertise" },
+        { icon: FileText, name: "Negotiation Support" },
+        { icon: Users, name: "End-to-End Guidance" },
+        { icon: Shield, name: "Time-Saving Process" },
+        { icon: Gavel, name: "Proven Success" },
     ]
 
     return (
@@ -20,26 +20,24 @@ export default function AboutSection() {
                         {/* Main Heading with Creative Typography */}
                         <div className="space-y-4">
                             <h2 className="text-5xl lg:text-6xl font-bold leading-normal">
-                                <span className="text-foreground">We Have</span>
+                                <span className="text-foreground">Why </span>
                                 {/* <br /> */}
                                 <span className="text-primary relative">
-                                    &nbsp;Experienced
+                                    &nbsp;Choose 
                                     <div className="absolute -bottom-2 left-2 w-full h-1 bg-secondary rounded-full"></div>
                                 </span>
                                 <br />
-                                <span className="text-foreground">Lawyers</span>
+                                <span className="text-foreground">Us</span>
                             </h2>
                             <div className="flex items-center gap-4 mt-6">
                                 <div className="w-16 h-1 bg-primary rounded-full"></div>
-                                <p className="text-xl text-secondary font-medium">Always Ready To Help You</p>
+                                <p className="text-xl text-secondary font-medium">Trusted Property Advocacy in Australia</p>
                             </div>
                         </div>
 
                         {/* Description with Modern Styling */}
                         <p className="text-muted-foreground text-lg leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Platea dictumst quisque sagittis purus sit amet volutpat. Massa massa ultricies mi
-                            quis hendrerit dolor. Quis commodo odio aenean.
+                            Abbass Advocacy provides expert, unbiased support for property buyers across Australia. Our buyer-only approach ensures your interests come first. From search to settlement, we reduce stress, save time, and deliver great outcomes. Backed by experience and results, we help you buy smart and confidently in any market.
                         </p>
 
                         {/* Services Grid - Innovative Layout */}
