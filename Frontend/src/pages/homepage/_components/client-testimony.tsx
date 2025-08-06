@@ -1,8 +1,8 @@
 "use client"
 
-import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react"
 import { useState } from "react"
 
 export default function ClientTestimonials() {
@@ -55,7 +55,7 @@ export default function ClientTestimonials() {
                         Client Testimonials
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold text-[#1C1C1C] mb-6">What Clients Say About Us</h2>
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-lg text-secondary/60 max-w-3xl mx-auto">
                         Don't just take our word for it. Here's what our satisfied clients have to say about our legal services.
                     </p>
                 </div>

@@ -118,6 +118,6 @@
 
   body {
     font-family: "Merriweather", serif;
-    @apply bg-background text-foreground px-4 md:px-12;
+    @apply bg-background text-foreground ;
   }
 }

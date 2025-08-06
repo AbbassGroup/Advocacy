@@ -10,7 +10,7 @@ const HeroSection = () => {
                                 <h1 className="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl sm:leading-tight lg:leading-tight lg:text-6xl font-pj">
                                     Your Property Advocate in Australia
                                 </h1>
-                                <p className="mt-2 text-lg text-gray-600 sm:mt-8 font-inter">
+                                <p className="mt-2 text-lg text-secondary/60 sm:mt-8 font-inter">
                                     Helping you buy the right property with confidence, expert insights, and end-to-end support—saving you time, stress, and money.
                                 </p>
 

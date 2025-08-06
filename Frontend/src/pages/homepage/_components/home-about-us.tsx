@@ -42,7 +42,7 @@ const HomeAboutUs = () => {
                     They Are <span className="text-primary">Always Ready</span> To Help You.
                 </h2>
 
-                <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                <p className="text-lg text-secondary/60 leading-relaxed mb-8">
                     With over two decades of legal excellence, our firm has built a reputation for delivering exceptional
                     results and unwavering advocacy. We combine deep legal expertise with personalized attention to ensure
                     every client receives the dedicated representation they deserve.

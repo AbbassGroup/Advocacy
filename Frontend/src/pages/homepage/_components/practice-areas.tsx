@@ -55,7 +55,7 @@ export default function PracticeAreas() {
                                     <h3 className="text-2xl font-bold text-[#1C1C1C] mb-4 group-hover:text-[#D8B588] transition-colors">
                                         {area.title}
                                     </h3>
-                                    <p className="text-gray-600 leading-relaxed mb-6">{area.description}</p>
+                                    <p className="text-secondary/60 leading-relaxed mb-6">{area.description}</p>
                                     <Button
                                         variant="ghost"
                                         className="text-[#D8B588] hover:text-[#1C1C1C] hover:bg-[#D8B588]/10 p-0 h-auto font-semibold group/btn"

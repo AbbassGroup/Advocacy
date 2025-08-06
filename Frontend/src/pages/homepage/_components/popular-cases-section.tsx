@@ -49,7 +49,7 @@ export default function PopularCases() {
                             Recent Cases
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-[#1C1C1C] mb-4">Recent Case Studies</h2>
-                        <p className="text-lg text-gray-600 max-w-2xl">
+                        <p className="text-lg text-secondary/60 max-w-2xl">
                             Explore our recent successful cases and see how we've helped clients achieve their legal objectives.
                         </p>
                     </div>
@@ -84,7 +84,7 @@ export default function PopularCases() {
                                 <h3 className="text-xl font-bold text-[#1C1C1C] mb-3 group-hover:text-[#D8B588] transition-colors">
                                     {caseItem.title}
                                 </h3>
-                                <p className="text-gray-600 leading-relaxed mb-6">{caseItem.description}</p>
+                                <p className="text-secondary/60 leading-relaxed mb-6">{caseItem.description}</p>
 
                                 {/* Case Details */}
                                 <div className="space-y-3 mb-6">
