@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { Car, FileText, Gavel, Scale, Shield, Users } from "lucide-react"
 
 export default function AboutSection() {
@@ -15,9 +14,7 @@ export default function AboutSection() {
         <section className="relative bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
             <div className="relative container mx-auto py-20">
                 <div className="grid lg:grid-cols-12 gap-20 items-center">
-                    {/* Content Side - Asymmetrical Layout */}
                     <div className="lg:col-span-7 space-y-8 relative">
-                        {/* Main Heading with Creative Typography */}
                         <div className="space-y-4">
                             <h2 className="text-5xl lg:text-6xl font-bold leading-normal">
                                 <span className="text-foreground">Why </span>
@@ -35,12 +32,10 @@ export default function AboutSection() {
                             </div>
                         </div>
 
-                        {/* Description with Modern Styling */}
                         <p className="text-muted-foreground text-lg leading-relaxed">
                             Abbass Advocacy provides expert, unbiased support for property buyers across Australia. Our buyer-only approach ensures your interests come first. From search to settlement, we reduce stress, save time, and deliver great outcomes. Backed by experience and results, we help you buy smart and confidently in any market.
                         </p>
 
-                        {/* Services Grid - Innovative Layout */}
                         <div className="grid grid-cols-2 gap-6">
                             {services.map((service, index) => {
                                 const Icon = service.icon
@@ -64,18 +59,7 @@ export default function AboutSection() {
                                 )
                             })}
                         </div>
-
-                        {/* CTA Button */}
-                        <div className="pt-4">
-                            <Button
-                                size="lg"
-                                className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-8 rounded-xl text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
-                            >
-                                Read More
-                            </Button>
-                        </div>
                     </div>
-                    {/* Image Side - Creative Positioning */}
                     <div className="lg:col-span-5 relative  pr-4">
                         <div className="relative">
                             <div className="relative overflow-hidden rounded-3xl  ring-2 ring-primary ring-offset-8">

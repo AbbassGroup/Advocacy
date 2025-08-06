@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import ActionButton from "../appointment-button"
+import { Link } from "react-router-dom"
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -18,7 +19,7 @@ export default function Navbar() {
     }, [])
 
     const navItems = [
-        { name: "Home", href: "#" },
+        { name: "Home", href: "/" },
         { name: "About", href: "#" },
         { name: "Blog", href: "#" },
         { name: "Contact", href: "contact-us" },
@@ -54,9 +55,11 @@ export default function Navbar() {
 
                     {/* CTA Button */}
                     <div className="hidden lg:block">
-                        <ActionButton>
-                            Get Consultation
-                        </ActionButton>
+                        <Link to={'/advocacy/contact-us'}>
+                            <ActionButton>
+                                Get Consultation
+                            </ActionButton>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}

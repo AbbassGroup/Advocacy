@@ -34,14 +34,10 @@ export default function AboutAttorneySection() {
                         </h2>
 
                         <p className="text-lg text-secondary/60 leading-relaxed mb-8">
-                            Our diverse team of experienced attorneys brings together decades of legal expertise across multiple
-                            practice areas. Each member of our team is committed to providing exceptional legal representation and
-                            personalized service to our clients.
+                            At Abbass Advocacy, we specialise in helping buyers find, assess, and secure the right property across Australia. Whether you're a first-home buyer, investor, or relocating family, our expert team offers unbiased guidance and personalised support from search to settlement.
                         </p>
-
                         <p className="text-lg text-secondary/60 leading-relaxed mb-10">
-                            From complex corporate transactions to individual legal matters, our attorneys have the knowledge and
-                            experience to handle your case with the utmost professionalism and dedication.
+                            We work exclusively for you—not sellers or agents—ensuring your interests always come first.
                         </p>
 
                         {/* Stats */}
