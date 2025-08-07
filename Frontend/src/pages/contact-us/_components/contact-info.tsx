@@ -45,9 +45,8 @@ const ContactInfo = () => {
             </div>
 
             <div className="mt-8 pt-6 border-t border-border/50">
-                <p className="text-muted-foreground leading-relaxed">
-                    At ABBASS Finance, your success is our priority. Whether you're looking for a new loan, do a refinance
-                    or simply have a question about how we can support your journey, we're just a message away.
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                    At Abbass Advocacy, we make your property journey smooth and stress-free. Whether you're a first-home buyer, investor, or relocating, our expert team is here to guide you. Have questions? Contact us by form, phone, or email—we're here to help.
                 </p>
             </div>
         </div>
