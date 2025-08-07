@@ -1,4 +1,4 @@
-import SectionHeaderDescription from "@/components/section-header-description"
+import SectionHeader from "@/components/section-header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { practiceAreas } from "@/data/practice-areas"
@@ -8,26 +8,13 @@ export default function PracticeAreas() {
     return (
         <section className="py-16 lg:py-24">
             <div className="container mx-auto">
-                {/* Header */}
                 <div className="text-left mb-16">
-                    <h2 className="text-3xl sm:text-6xl font-bold text-gray-900 mb-6">
-                        Our Trusted{" "}
-                        <span className="text-primary relative">
-                            Partners
-                            <svg
-                                className="absolute -bottom-2 left-0 w-full h-3 text-primary/20"
-                                viewBox="0 0 100 12"
-                                fill="currentColor"
-                            >
-                                <path d="M0 8c30-4 70-4 100 0v4H0z" />
-                            </svg>
-                        </span>
-                    </h2>
-
-                    <div className="max-w-3xl">
-                        <SectionHeaderDescription title="We provide comprehensive legal services across multiple practice areas, delivering expert counsel and
-                        dedicated advocacy for our clients."/>
-                    </div>
+                    <SectionHeader
+                        preText="Our Trusted"
+                        highlightText="Partners"
+                        description="We provide comprehensive legal services across multiple practice areas, delivering expert counsel and
+                        dedicated advocacy for our clients."
+                    />
                 </div>
                 <div className="grid md:grid-cols-3 gap-8">
                     {practiceAreas.map((area) => {

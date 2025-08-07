@@ -8,18 +8,17 @@ export default function Footer() {
 
     return (
         <footer className="bg-primary/10">
-            <div className="container mx-auto py-16">
+            <div className="container mx-auto py-16 px-4 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
                     <div className="lg:col-span-1">
                         <div className="flex items-center gap-3 mb-6">
-                            <img src={brand.logo} alt="abbas-advocacy" className='h-20'/>
+                            <img src={brand.logo} alt="abbas-advocacy" className='h-20' />
                         </div>
                         <p className="text-secondary/50 text-sm leading-relaxed mb-8 max-w-xs">
                             {brand.description}
                         </p>
                     </div>
 
-                    {/* Navigation Sections */}
                     {sections.map((section, index) => (
                         <div key={index} className="lg:col-span-1">
                             <h3 className="text-lg font-semibold text-secondary mb-6">
@@ -41,13 +40,11 @@ export default function Footer() {
                         </div>
                     ))}
 
-                    {/* Contact Section */}
                     <div className="lg:col-span-1">
                         <h3 className="text-lg font-semibold text-secondary mb-6">
                             {contact.title}
                         </h3>
                         <div className="space-y-6">
-                            {/* Phone & Email */}
                             <div>
                                 <p className="text-sm text-secondary/60 mb-3">{contact.phone.label}</p>
                                 <div className="space-y-2">
@@ -67,7 +64,6 @@ export default function Footer() {
                                 </div>
                             </div>
 
-                            {/* Location */}
                             <div>
                                 <p className="text-sm text-secondary/60 mb-3">{contact.location.label}</p>
                                 <div className="flex items-start gap-3">
@@ -80,11 +76,10 @@ export default function Footer() {
                 </div>
             </div>
 
-            {/* Copyright Bar */}
             <div className="bg-primary py-4">
                 <div className="container mx-auto">
-                    <p className="text-center text-black text-sm">
-                        {copyright.text}
+                    <p className="text-center text-secondary text-sm">
+                        &copy; {copyright.text}
                     </p>
                 </div>
             </div>

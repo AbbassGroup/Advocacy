@@ -1,35 +1,21 @@
-"use client"
-import SectionHeaderDescription from "@/components/section-header-description"
+import SectionHeader from "@/components/section-header"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { faqData } from "@/data/faq-data"
 
 const FAQSection = () => {
     return (
-        <section className="py-16 lg:py-24 bg-gradient-to-b from-muted/20 to-background">
+        <section id="faqs">
             <div className="container mx-auto">
-                <div className="text-left mb-16">
-                    <h2 className="text-3xl sm:text-6xl font-bold text-gray-900 mb-6">
-                        Frequently Asked{" "}
-                        <span className="text-primary relative">
-                            Questions
-                            <svg
-                                className="absolute -bottom-2 left-0 w-full h-3 text-primary/20"
-                                viewBox="0 0 100 12"
-                                fill="currentColor"
-                            >
-                                <path d="M0 8c30-4 70-4 100 0v4H0z" />
-                            </svg>
-                        </span>
-                    </h2>
-                    <div className="max-w-3xl">
-                        <SectionHeaderDescription title=" Get answers to the most common questions about our property advocacy services and how we can help you secure
-                        your dream property."/>
-                    </div>
+                <div className="mb-16">
+                    <SectionHeader
+                        preText="Frequently Asked"
+                        highlightText="Questions"
+                        description="Get answers to the most common questions about our property advocacy services and how we can help you secure
+                        your dream property."
+                    />
                 </div>
 
-                {/* FAQ Grid Layout */}
                 <div className="grid lg:grid-cols-3 gap-8 mb-12">
-                    {/* Left Column - Stats */}
                     <div className="lg:col-span-1">
                         <div className="sticky top-8 space-y-6">
                             <div className="bg-primary/5 rounded-2xl border border-primary/10 p-6">
@@ -61,7 +47,6 @@ const FAQSection = () => {
                             </div>
                         </div>
                     </div>
-
                     {/* Right Column - FAQ Accordion */}
                     <div className="lg:col-span-2">
                         <div className="bg-white rounded-2xl border border-border/50 shadow-sm overflow-hidden">

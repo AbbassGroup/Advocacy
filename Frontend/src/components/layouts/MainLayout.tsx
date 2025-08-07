@@ -1,32 +1,30 @@
-import Lenis from 'lenis'
 import { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import Footer from '../common/footer'
 import Navbar from '../common/navbar'
-function easeOutQuint(x: number): number {
-    return 1 - Math.pow(1 - x, 5)
-}
+import ScrollToTop from '@/utils/scroll-top'
+import lenis from '@/utils/lenis'
+
 const MainLayout = () => {
     useEffect(() => {
-        const lenis = new Lenis({
-            autoRaf: true,
-            smoothWheel: true,
-            easing: easeOutQuint,
-        })
+        const raf = (time: number) => {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
 
         return () => {
             lenis.destroy()
         }
     }, [])
     return (
-        <div className='space-y-12'>
-            <div className='container mx-auto px-4 md:px-12 space-y-16'>
-                <div>
+        <div>
+            <ScrollToTop />
+            <div className='space-y-12'>
+                <div className='container mx-auto px-4 md:px-12 space-y-16'>
                     <Navbar />
+                    <Outlet />
                 </div>
-                <Outlet />
-            </div>
-            <div>
                 <Footer />
             </div>
         </div>

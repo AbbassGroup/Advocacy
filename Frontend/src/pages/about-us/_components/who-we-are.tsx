@@ -20,7 +20,7 @@ const WhoWeAre = () => {
                         </div>
                     </div>
                     <div className="lg:col-span-5">
-                        <img src="about-us-hero.png" alt="about-us-hero.png" className="h-96 mx-auto"/>
+                        <img src="about-us-hero.png" alt="about-us-hero.png" className="h-80 mx-auto"/>
                     </div>
                 </div>
             </div>

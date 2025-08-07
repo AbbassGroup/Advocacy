@@ -1,6 +1,6 @@
 const HeroSection = () => {
     return (
-        <div className="relative">
+        <div className="relative mt-20">
             <div className="bg-gradient-to-t from-white via-white to-transparent w-full absolute bottom-10 h-60 z-10"></div>
             <section className="pt-12 pb-12 sm:pb-16 lg:pt-8">
                 <div className="px-4 mx-auto container sm:px-6 md:px-0">

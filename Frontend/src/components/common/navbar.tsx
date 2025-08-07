@@ -1,15 +1,13 @@
-"use client"
-
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Menu, X } from "lucide-react"
+import { useEffect, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import ActionButton from "../appointment-button"
-import { Link } from "react-router-dom"
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
+    const navigate = useNavigate()
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20)
@@ -19,9 +17,9 @@ export default function Navbar() {
     }, [])
 
     const navItems = [
-        { name: "Home", href: "/" },
+        { name: "Home", href: "/advocacy/" },
         { name: "About", href: "about-us" },
-        { name: "Blog", href: "#" },
+        { name: "Blog", href: "blogs" },
         { name: "Contact", href: "contact-us" },
     ]
 
@@ -30,10 +28,10 @@ export default function Navbar() {
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-primary/10" : "bg-transparent"
                 }`}
         >
-            <div className="container mx-auto">
+            <div className="container mx-auto  px-4 md:px-12">
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-3 hover:cursor-pointer" onClick={() => { navigate('/advocacy/') }}>
                         <div className="hidden sm:block">
                             <img src="/advocacy/logo.png" alt="abbas advocacy logo" className="h-16" />
                         </div>
@@ -42,14 +40,14 @@ export default function Navbar() {
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center space-x-8">
                         {navItems.map((item) => (
-                            <a
+                            <Link
                                 key={item.name}
-                                href={item.href}
+                                to={item.href}
                                 className="relative text-foreground/80 hover:text-primary transition-colors duration-200 font-medium group"
                             >
                                 {item.name}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
-                            </a>
+                            </Link>
                         ))}
                     </div>
 

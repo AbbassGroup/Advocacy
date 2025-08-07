@@ -1,3 +1,4 @@
+import SectionHeader from "@/components/section-header"
 import { Award, Clock, Users } from "lucide-react"
 
 export default function AboutAttorneySection() {
@@ -29,13 +30,12 @@ export default function AboutAttorneySection() {
                         </div>
                     </div>
                     <div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#1C1C1C] mb-6 leading-tight">
-                            Your Property  <span className="text-primary">Buying </span> Partner
-                        </h2>
-
-                        <p className="text-lg text-secondary/60 leading-relaxed mb-8">
-                            At Abbass Advocacy, we specialise in helping buyers find, assess, and secure the right property across Australia. Whether you're a first-home buyer, investor, or relocating family, our expert team offers unbiased guidance and personalised support from search to settlement.
-                        </p>
+                        <SectionHeader
+                            preText="Your Property Buying"
+                            highlightText="Partner"
+                            description="At Abbass Advocacy, we specialise in helping buyers find, assess, and secure the right property across Australia. Whether you're a first-home buyer, investor, or relocating family, our expert team offers unbiased guidance and personalised support from search to settlement."
+                        />
+                        <br/>
                         <p className="text-lg text-secondary/60 leading-relaxed mb-10">
                             We work exclusively for you—not sellers or agents—ensuring your interests always come first.
                         </p>

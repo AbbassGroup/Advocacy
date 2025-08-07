@@ -118,6 +118,34 @@
 
   body {
     font-family: "Merriweather", serif;
-    @apply bg-background text-foreground ;
+    scroll-behavior: smooth;
+    @apply bg-background text-foreground;
   }
+}
+
+
+::-webkit-scrollbar {
+  width: 5px;
+  /* scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-secondary);
+  /* track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d8b588;
+  /* thumb color (your primary) */
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* === Firefox === */
+* {
+  scrollbar-width: thin;
+  /* "auto" or "thin" */
+  scrollbar-color: #d8b588 var(--color-secondary);
+  /* thumb and track */
 }

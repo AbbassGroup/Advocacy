@@ -13,7 +13,7 @@ const ValuesSection = () => {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
                     {values.map((value, index) => (
                         <ValueItem key={index} {...value} />
                     ))}
@@ -28,14 +28,14 @@ export default ValuesSection;
 const ValueItem = ({
     icon: Icon,
     title,
-    description,
+    // description,
 }: {
     icon: React.ElementType;
     title: string;
-    description: string;
+    // description: string;
 }) => (
     <div className="bg-primary/5 rounded-xl border border-border/50 p-6 transition-all duration-300 hover:border-primary/20 group">
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex items-center gap-4">
             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                 <Icon className="w-6 h-6 text-primary" />
             </div>
@@ -43,7 +43,7 @@ const ValueItem = ({
                 {title}
             </h3>
         </div>
-        <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+        {/* <p className="text-muted-foreground text-sm leading-relaxed">{description}</p> */}
     </div>
 );
 

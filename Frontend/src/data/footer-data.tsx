@@ -7,20 +7,19 @@ export const footerConfig = {
         {
             title: "Quick Link:",
             links: [
-                { name: "About Us", url: "/about" },
-                { name: "Practice Area", url: "/practice" },
-                { name: "Blog", url: "/blog" },
-                { name: "Attorney", url: "/attorney" },
-                { name: "Cases", url: "/cases" }
+                { name: "Home", url: "/advocacy/" },
+                { name: "About Us", url: "/advocacy/about-us" },
+                { name: "Blog", url: "/advocacy/blogs" },
+                { name: "Practice Area", url: "/practice-area" },
             ]
         },
         {
             title: "Explore Us:",
             links: [
-                { name: "Contact Us", url: "/contact" },
-                { name: "Style Guide", url: "/style-guide" },
-                { name: "Change Log", url: "/changelog" },
-                { name: "Licenses", url: "/licenses" }
+                { name: "Contact Us", url: "/advocacy/contact-us" },
+                { name: "FAQ", url: "#faqs" },
+                { name: "Resources", url: "/resources" },
+                { name: "Partners", url: "/partners" }
             ]
         }
     ],
@@ -37,6 +36,6 @@ export const footerConfig = {
         }
     },
     copyright: {
-        text: "Copyright © Abbas Advocacy - 2025"
+        text: "Copyright Abbas Advocacy - 2025"
     }
 }

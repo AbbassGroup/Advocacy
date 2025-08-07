@@ -1,3 +1,4 @@
+import SectionHeader from "@/components/section-header"
 import { Car, FileText, Gavel, Scale, Shield, Users } from "lucide-react"
 
 export default function AboutSection() {
@@ -11,31 +12,15 @@ export default function AboutSection() {
     ]
 
     return (
-        <section className="relative bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
+        <section className="relative overflow-hidden">
             <div className="relative container mx-auto py-20">
                 <div className="grid lg:grid-cols-12 gap-20 items-center">
                     <div className="lg:col-span-7 space-y-8 relative">
-                        <div className="space-y-4">
-                            <h2 className="text-5xl lg:text-6xl font-bold leading-normal">
-                                <span className="text-foreground">Why </span>
-                                {/* <br /> */}
-                                <span className="text-primary relative">
-                                    &nbsp;Choose 
-                                    <div className="absolute -bottom-2 left-2 w-full h-1 bg-secondary rounded-full"></div>
-                                </span>
-                                <br />
-                                <span className="text-foreground">Us</span>
-                            </h2>
-                            <div className="flex items-center gap-4 mt-6">
-                                <div className="w-16 h-1 bg-primary rounded-full"></div>
-                                <p className="text-xl text-secondary font-medium">Trusted Property Advocacy in Australia</p>
-                            </div>
-                        </div>
-
-                        <p className="text-muted-foreground text-lg leading-relaxed">
-                            Abbass Advocacy provides expert, unbiased support for property buyers across Australia. Our buyer-only approach ensures your interests come first. From search to settlement, we reduce stress, save time, and deliver great outcomes. Backed by experience and results, we help you buy smart and confidently in any market.
-                        </p>
-
+                        <SectionHeader
+                            preText="Why Choose"
+                            highlightText="Us"
+                            description="Abbass Advocacy provides expert, unbiased support for property buyers across Australia. Our buyer-only approach ensures your interests come first. From search to settlement, we reduce stress, save time, and deliver great outcomes. Backed by experience and results, we help you buy smart and confidently in any market."
+                        />
                         <div className="grid grid-cols-2 gap-6">
                             {services.map((service, index) => {
                                 const Icon = service.icon

@@ -3,6 +3,7 @@ import { books, type Book, type DownloadFormData } from "@/data/book-data"
 import { useState } from "react"
 import { BookCard } from "./book-card"
 import { BookDownloadModal } from "./book-preview"
+import SectionHeader from "./section-header"
 
 const BooksSection = () => {
     const [selectedBook, setSelectedBook] = useState<Book | null>(null)
@@ -26,24 +27,13 @@ const BooksSection = () => {
     return (
         <section className="py-16 lg:py-24">
             <div className="container mx-auto">
-                <div className="text-left mb-16">
-                    <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-6">
-                        Free Property{" "}
-                        <span className="text-primary relative">
-                            Resources
-                            <svg
-                                className="absolute -bottom-2 left-0 w-full h-3 text-primary/20"
-                                viewBox="0 0 100 12"
-                                fill="currentColor"
-                            >
-                                <path d="M0 8c30-4 70-4 100 0v4H0z" />
-                            </svg>
-                        </span>
-                    </h2>
-                    <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                        Download our comprehensive guides and resources to master the Australian property market. Expert insights,
-                        proven strategies, and actionable advice—all completely free.
-                    </p>
+                <div className="mb-16">
+                    <SectionHeader
+                        preText="Free Property"
+                        highlightText="Resources"
+                        description="Download our comprehensive guides and resources to master the Australian property market. Expert insights,
+                        proven strategies, and actionable advice—all completely free."
+                    />
                 </div>
                 <div className="relative">
                     <Carousel
