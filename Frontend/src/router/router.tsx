@@ -1,4 +1,5 @@
 import MainLayout from "@/components/layouts/MainLayout";
+import AboutUsPage from "@/pages/about-us/page";
 import ContactPage from "@/pages/contact-us/page";
 import Homepage from "@/pages/homepage/page";
 import { createBrowserRouter } from "react-router-dom";
@@ -15,7 +16,11 @@ export const router = createBrowserRouter([
             {
                 path: 'contact-us',
                 element: <ContactPage />
-            }
+            },
+            {
+                path: 'about-us',
+                element: <AboutUsPage />
+            },
         ]
     }
 ])
