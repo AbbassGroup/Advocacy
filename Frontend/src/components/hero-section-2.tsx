@@ -27,7 +27,6 @@ export default function HeroSection() {
 
     return (
         <main className="relative py-12 sm:py-16">
-            {/* Background Slideshow */}
             <div className="absolute inset-0 -z-10">
                 <div className="bg-black w-full h-full absolute inset-0 z-10 opacity-50"></div>
                 {backgroundImages.map((image, index) => (
@@ -45,7 +44,6 @@ export default function HeroSection() {
                 ))}
             </div>
 
-            {/* Slide Dots */}
             <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
                 {backgroundImages.map((_, index) => (
                     <button
@@ -59,21 +57,15 @@ export default function HeroSection() {
                 ))}
             </div>
 
-            {/* Static Content Overlay */}
             <div className="relative z-10 min-h-[80vh] flex items-center justify-center text-center container mx-auto px-4 sm:px-6 lg:px-12 py-8">
                 <div className="w-full max-w-3xl">
-                    {/* Heading */}
                     <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight tracking-tight text-white mb-4 sm:mb-6">
                         Your Property Advocate in Australia
                     </h1>
-
-                    {/* Description */}
                     <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto">
                         Helping you buy the right property with confidence, expert insights, and
                         end-to-end support—saving you time, stress, and money.
                     </p>
-
-                    {/* Email Form */}
                     <form onSubmit={onSubmit} className="mb-8 sm:mb-12">
                         <div className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
                             <div className="relative flex-1">
@@ -96,8 +88,6 @@ export default function HeroSection() {
                             </Button>
                         </div>
                     </form>
-
-                    {/* Stats */}
                     <div className="grid grid-cols-2 gap-6 sm:gap-8 max-w-md mx-auto">
                         <div className="space-y-1">
                             <div className="text-3xl sm:text-4xl font-bold text-white">
