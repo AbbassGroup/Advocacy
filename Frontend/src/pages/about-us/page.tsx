@@ -7,7 +7,7 @@ import WhoWeAre from "./_components/who-we-are"
 
 const AboutUsPage = () => {
     return (
-        <div className="relative w-full">
+        <div className="relative w-full container mx-auto px-4 md:px-12">
             <div className="container mx-auto py-16 lg:py-24 space-y-16 md:space-y-24">
                 <HeroSection
                     icon={BadgeInfo}

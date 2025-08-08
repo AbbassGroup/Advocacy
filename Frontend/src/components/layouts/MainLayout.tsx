@@ -20,8 +20,8 @@ const MainLayout = () => {
     return (
         <div>
             <ScrollToTop />
-            <div className='space-y-12'>
-                <div className='container mx-auto px-4 md:px-12 space-y-16'>
+            <div className='space-y-20'>
+                <div className='space-y-20'>
                     <Navbar />
                     <Outlet />
                 </div>

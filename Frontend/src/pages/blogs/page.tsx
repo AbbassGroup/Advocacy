@@ -8,7 +8,7 @@ const BlogsPage = () => {
         console.log('Load more clicked')
     }
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen container mx-auto px-4 md:px-12 ">
             <section className="py-16 lg:py-24 space-y-8 md:space-y-24">
                 <div className="container mx-auto">
                     <HeroSection

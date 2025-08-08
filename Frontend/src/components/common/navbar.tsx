@@ -1,11 +1,18 @@
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import ActionButton from "../appointment-button"
 
 export default function Navbar() {
+    const location = useLocation();
+    const isHomepage = location.pathname === '/advocacy/'
     const [isScrolled, setIsScrolled] = useState(false)
+    const isHomepageAndTop = isHomepage && !isScrolled;
+    const linkColorClass = isHomepageAndTop
+        ? "text-white"
+        : "text-foreground/80 hover:text-primary";
+
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const navigate = useNavigate()
     useEffect(() => {
@@ -25,16 +32,22 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-primary/10" : "bg-transparent"
-                }`}
+            className={`fixed w-full top-0 left-0 right-0 z-50 transition-all duration - 300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-primary/10" : "bg-transparent"
+                } `}
         >
-            <div className="container mx-auto  px-4 md:px-12">
-                <div className="flex items-center justify-between h-20">
+            <div className="container mx-auto px-4 md:px-12">
+                <div className="flex items-center justify-between h-20 w-full">
                     {/* Logo */}
                     <div className="flex items-center space-x-3 hover:cursor-pointer" onClick={() => { navigate('/advocacy/') }}>
-                        <div className="hidden sm:block">
-                            <img src="/advocacy/logo.png" alt="abbas advocacy logo" className="h-16" />
-                        </div>
+                        <img
+                            src={
+                                isHomepageAndTop
+                                    ? "/advocacy/logo-white.png"
+                                    : "/advocacy/logo.png"
+                            }
+                            alt="abbas advocacy logo"
+                            className="h-16"
+                        />
                     </div>
 
                     {/* Desktop Navigation */}
@@ -43,7 +56,7 @@ export default function Navbar() {
                             <Link
                                 key={item.name}
                                 to={item.href}
-                                className="relative text-foreground/80 hover:text-primary transition-colors duration-200 font-medium group"
+                                className={`relative ${linkColorClass} transition-colors duration-200 font-medium group`}
                             >
                                 {item.name}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
